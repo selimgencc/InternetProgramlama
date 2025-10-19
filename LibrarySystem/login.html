@@ -5,62 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giriş | Selim Library</title>
     <link rel="stylesheet" href="genel.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
+    <header class="navbar modern-navbar">
+        <div class="logo-min">
             <a href="index.html">
                 <img src="logo.png" alt="Selim Library Logo">
             </a>
-            <h1>Selim Library</h1>
         </div>
+        <h1 class="site-title">Selim Library</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="misyon-vizyon.html">Misyon & Vizyon</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-                <li><a href="login.html" class="active">Giriş</a></li>
+                <li><a href="index.html">
+                    <i class="fas fa-home"></i>
+                    Ana Sayfa
+                </a></li>
+                <li><a href="hakkimizda.html">
+                    <i class="fas fa-info-circle"></i>
+                    Hakkımızda
+                </a></li>
+                <li><a href="misyon-vizyon.html">
+                    <i class="fas fa-bullseye"></i>
+                    Misyon & Vizyon
+                </a></li>
+                <li><a href="iletisim.html">
+                    <i class="fas fa-envelope"></i>
+                    İletişim
+                </a></li>
+                <li><a href="kitaplar.php">
+                    <i class="fas fa-book"></i>
+                    Kitaplar
+                </a></li>
+                <li><a href="login.html" class="active">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Giriş
+                </a></li>
             </ul>
         </nav>
     </header>
 
     <!-- MAIN LOGIN SECTION -->
-    <main class="login-container">
-        <div class="login-card">
-            <h2>🔐 Giriş Yap</h2>
-            <form id="loginForm">
-                <label for="username">Kullanıcı Adı</label>
-                <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı giriniz" required>
-
-                <label for="password">Şifre</label>
-                <input type="password" id="password" name="password" placeholder="Şifrenizi giriniz" required>
-
-                <div class="login-options">
-                    <label><input type="checkbox" name="remember"> Beni hatırla</label>
-                    <a href="#">Şifremi unuttum?</a>
+    <main class="login-container modern-login">
+        <div class="login-background">
+            <div class="login-pattern"></div>
+        </div>
+        <div class="login-card modern-login-card">
+            <div class="login-header">
+                <div class="login-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h2>Giriş Yap</h2>
+                <p>Hesabınıza giriş yaparak kütüphanemizin tüm özelliklerine erişebilirsiniz</p>
+            </div>
+            
+            <form id="loginForm" class="modern-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        Kullanıcı Adı
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı giriniz" required>
                 </div>
 
-                <button type="submit" class="login-btn">Giriş Yap</button>
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Şifre
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Şifrenizi giriniz" required>
+                </div>
+
+                <div class="login-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="remember">
+                        <span class="checkmark"></span>
+                        Beni hatırla
+                    </label>
+                    <a href="#" class="forgot-password">
+                        <i class="fas fa-question-circle"></i>
+                        Şifremi unuttum?
+                    </a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Giriş Yap
+                </button>
             </form>
+
+            <div class="login-footer">
+                <div class="divider">
+                    <span>veya</span>
+                </div>
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Google ile Giriş
+                    </button>
+                    <button class="social-btn microsoft-btn">
+                        <i class="fab fa-microsoft"></i>
+                        Microsoft ile Giriş
+                    </button>
+                </div>
+                <div class="login-help">
+                    <p>Hesabınız yok mu? <a href="#" class="register-link">Kayıt olun</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-info">
+            <div class="info-card">
+                <h3><i class="fas fa-shield-alt"></i> Güvenli Giriş</h3>
+                <p>Verileriniz SSL sertifikası ile korunmaktadır</p>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-clock"></i> 7/24 Erişim</h3>
+                <p>İstediğiniz zaman kütüphaneye erişebilirsiniz</p>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-mobile-alt"></i> Mobil Uyumlu</h3>
+                <p>Tüm cihazlarda mükemmel deneyim</p>
+            </div>
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Selim Library | Medeniyet Üniversitesi</p>
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-book"></i> Selim Library</h3>
+                    <p>İstanbul Medeniyet Üniversitesi'nin dijital kütüphane platformu. Bilgiye erişimi kolaylaştırıyoruz.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Sayfalar</h4>
+                        <ul>
+                            <li><a href="index.html">Ana Sayfa</a></li>
+                            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="misyon-vizyon.html">Misyon & Vizyon</a></li>
+                            <li><a href="iletisim.html">İletişim</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Destek</h4>
+                        <ul>
+                            <li><a href="#">Yardım Merkezi</a></li>
+                            <li><a href="#">SSS</a></li>
+                            <li><a href="#">Teknik Destek</a></li>
+                            <li><a href="#">Geri Bildirim</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>İletişim</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                            <p><i class="fas fa-phone"></i> +90 (212) 123 45 67</p>
+                            <p><i class="fas fa-envelope"></i> info@selimlibrary.edu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Selim Library | İstanbul Medeniyet Üniversitesi. Tüm hakları saklıdır.</p>
+        </div>
     </footer>
+
     <script>
       document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        if (username === 'admin' && password === 'admin123') {
-          window.location.href = 'admin.html';
-        } else {
-          alert('Hatalı kullanıcı adı veya şifre!');
-        }
+        
+        // Loading state
+        const submitBtn = document.querySelector('.login-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Giriş yapılıyor...';
+        submitBtn.disabled = true;
+        
+        // PHP backend'e istek gönder
+        fetch('api/login.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Başarılı!';
+            submitBtn.style.background = 'linear-gradient(135deg, #00ff88, #00cc66)';
+            setTimeout(() => {
+              window.location.href = data.redirect || 'kitaplar.php';
+            }, 1000);
+          } else {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.background = 'linear-gradient(135deg, #ff4444, #cc0000)';
+            setTimeout(() => {
+              submitBtn.style.background = 'linear-gradient(135deg, #e60026, #8b0000)';
+            }, 2000);
+            alert(data.message || 'Giriş başarısız!');
+          }
+        })
+        .catch(error => {
+          console.error('Hata:', error);
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          alert('Bağlantı hatası! Lütfen tekrar deneyin.');
+        });
       });
     </script>
 </body>

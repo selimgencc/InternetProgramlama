@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Admin Paneli | Selim Library</title>
   <link rel="stylesheet" href="genel.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   
@@ -28,89 +29,190 @@
   <main class="admin-container">
     <aside class="admin-sidebar">
       <div class="admin-profile">
-        <img src="logo.png" alt="admin" />
-        <div>
+        <div class="profile-avatar">
+          <img src="logo.png" alt="admin" />
+          <div class="status-indicator"></div>
+        </div>
+        <div class="profile-info">
           <h3>Admin</h3>
           <p>msb.admin@univ.edu</p>
+          <span class="role-badge">Yönetici</span>
         </div>
       </div>
 
       <ul class="admin-menu">
-        <li class="active">Panoya Genel Bakış</li>
-        <li>Kitap Yönetimi</li>
-        <li>Kullanıcılar</li>
-        <li>Duyurular</li>
-        <li>Ayarlar</li>
+        <li class="active">
+          <i class="fas fa-chart-pie"></i>
+          <span>Panoya Genel Bakış</span>
+        </li>
+        <li>
+          <i class="fas fa-book"></i>
+          <span>Kitap Yönetimi</span>
+        </li>
+        <li>
+          <i class="fas fa-users"></i>
+          <span>Kullanıcılar</span>
+        </li>
+        <li>
+          <i class="fas fa-bullhorn"></i>
+          <span>Duyurular</span>
+        </li>
+        <li>
+          <i class="fas fa-cog"></i>
+          <span>Ayarlar</span>
+        </li>
       </ul>
 
       <div class="small-note">
-        <strong>Not:</strong>
-        Bu panel demo amaçlıdır. Gerçek projede sunucu tarafı doğrulama gereklidir.
+        <i class="fas fa-info-circle"></i>
+        <div>
+          <strong>Not:</strong>
+          Bu panel demo amaçlıdır. Gerçek projede sunucu tarafı doğrulama gereklidir.
+        </div>
       </div>
     </aside>
 
     <section class="admin-main">
       <div class="dashboard-header">
-        <h2>Yönetici Paneli</h2>
+        <div class="header-left">
+          <h2>Yönetici Paneli</h2>
+          <p class="header-subtitle">Kütüphane yönetim sistemi</p>
+        </div>
         <div class="header-actions">
-          <button id="exportBtn" class="btn small">CSV Dışa Aktar</button>
-          <button id="clearStorage" class="btn small ghost">Local Verileri Temizle</button>
+          <button id="exportBtn" class="btn btn-primary">
+            <i class="fas fa-download"></i>
+            CSV Dışa Aktar
+          </button>
+          <button id="clearStorage" class="btn btn-secondary">
+            <i class="fas fa-trash"></i>
+            Local Verileri Temizle
+          </button>
         </div>
       </div>
 
       <!-- KARTLAR -->
-      <div class="cards">
-        <div class="card">
-          <h4>Toplam Kitap</h4>
-          <p id="totalBooks">0</p>
+      <div class="stats-grid">
+        <div class="stat-card stat-primary">
+          <div class="stat-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Toplam Kitap</h4>
+            <p id="totalBooks" class="stat-number">0</p>
+            <span class="stat-label">Kayıtlı kitap sayısı</span>
+          </div>
         </div>
-        <div class="card">
-          <h4>Toplam Kullanıcı</h4>
-          <p id="totalUsers">0</p>
+        <div class="stat-card stat-success">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Toplam Kullanıcı</h4>
+            <p id="totalUsers" class="stat-number">0</p>
+            <span class="stat-label">Aktif kullanıcı sayısı</span>
+          </div>
         </div>
-        <div class="card">
-          <h4>Aktif Duyurular</h4>
-          <p id="totalAnnouncements">0</p>
+        <div class="stat-card stat-warning">
+          <div class="stat-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Aktif Duyurular</h4>
+            <p id="totalAnnouncements" class="stat-number">0</p>
+            <span class="stat-label">Yayında olan duyuru</span>
+          </div>
+        </div>
+        <div class="stat-card stat-info">
+          <div class="stat-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Sistem Durumu</h4>
+            <p class="stat-number">Aktif</p>
+            <span class="stat-label">Tüm sistemler çalışıyor</span>
+          </div>
         </div>
       </div>
 
       <!-- Kitap Yönetimi -->
       <div class="panel">
         <div class="panel-header">
-          <h3>Kitap Yönetimi</h3>
+          <div class="panel-title">
+            <i class="fas fa-book"></i>
+            <h3>Kitap Yönetimi</h3>
+          </div>
           <p class="muted">Yeni kitap ekleyin, düzenleyin veya silin.</p>
         </div>
 
         <div class="panel-body two-col">
           <form id="bookForm" class="panel-form">
-            <h4>Yeni Kitap Ekle</h4>
-            <label>Başlık
+            <div class="form-header">
+              <h4><i class="fas fa-plus-circle"></i> Yeni Kitap Ekle</h4>
+            </div>
+            <div class="form-group">
+              <label for="bookTitle">
+                <i class="fas fa-book"></i>
+                Başlık
+              </label>
               <input type="text" id="bookTitle" placeholder="Kitap başlığı" required />
-            </label>
-            <label>Yazar
+            </div>
+            <div class="form-group">
+              <label for="bookAuthor">
+                <i class="fas fa-user"></i>
+                Yazar
+              </label>
               <input type="text" id="bookAuthor" placeholder="Yazar adı" required />
-            </label>
-            <label>Yayın Yılı
-              <input type="number" id="bookYear" placeholder="2024" min="1000" max="2100" />
-            </label>
-            <label>Kategori
-              <input type="text" id="bookCategory" placeholder="Kategori (örn. Bilgisayar)" />
-            </label>
+            </div>
             <div class="form-row">
-              <button type="submit" class="btn">Ekle</button>
-              <button type="button" id="importSample" class="btn ghost">Örnek Ekle</button>
+              <div class="form-group">
+                <label for="bookYear">
+                  <i class="fas fa-calendar"></i>
+                  Yayın Yılı
+                </label>
+                <input type="number" id="bookYear" placeholder="2024" min="1000" max="2100" />
+              </div>
+              <div class="form-group">
+                <label for="bookCategory">
+                  <i class="fas fa-tags"></i>
+                  Kategori
+                </label>
+                <input type="text" id="bookCategory" placeholder="Bilgisayar" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Ekle
+              </button>
+              <button type="button" id="importSample" class="btn btn-outline">
+                <i class="fas fa-download"></i>
+                Örnek Ekle
+              </button>
             </div>
           </form>
 
-          <div class="table-wrap">
-            <h4>Kitap Listesi</h4>
-            <input id="bookSearch" placeholder="Kitap ara..." />
-            <table id="booksTable" class="table">
-              <thead>
-                <tr><th>Başlık</th><th>Yazar</th><th>Yıl</th><th>Kategori</th><th>İşlemler</th></tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+          <div class="table-section">
+            <div class="table-header">
+              <h4><i class="fas fa-list"></i> Kitap Listesi</h4>
+              <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input id="bookSearch" placeholder="Kitap ara..." />
+              </div>
+            </div>
+            <div class="table-container">
+              <table id="booksTable" class="table">
+                <thead>
+                  <tr>
+                    <th><i class="fas fa-book"></i> Başlık</th>
+                    <th><i class="fas fa-user"></i> Yazar</th>
+                    <th><i class="fas fa-calendar"></i> Yıl</th>
+                    <th><i class="fas fa-tags"></i> Kategori</th>
+                    <th><i class="fas fa-cog"></i> İşlemler</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -118,49 +220,85 @@
       <!-- Kullanıcı Yönetimi -->
       <div class="panel">
         <div class="panel-header">
-          <h3>Kullanıcılar</h3>
+          <div class="panel-title">
+            <i class="fas fa-users"></i>
+            <h3>Kullanıcı Yönetimi</h3>
+          </div>
           <p class="muted">Kayıtlı kullanıcıları görüntüleyin ve yönetim notları ekleyin.</p>
         </div>
 
         <div class="panel-body">
           <div class="users-controls">
-            <input id="userSearch" placeholder="Kullanıcı ara (isim veya eposta)" />
-            <button id="addSampleUsers" class="btn ghost">Örnek Kullanıcı Ekle</button>
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input id="userSearch" placeholder="Kullanıcı ara (isim veya eposta)" />
+            </div>
+            <button id="addSampleUsers" class="btn btn-outline">
+              <i class="fas fa-user-plus"></i>
+              Örnek Kullanıcı Ekle
+            </button>
           </div>
 
-          <table id="usersTable" class="table">
-            <thead>
-              <tr><th>Ad</th><th>E-Posta</th><th>Rol</th><th>İşlemler</th></tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+          <div class="table-container">
+            <table id="usersTable" class="table">
+              <thead>
+                <tr>
+                  <th><i class="fas fa-user"></i> Ad</th>
+                  <th><i class="fas fa-envelope"></i> E-Posta</th>
+                  <th><i class="fas fa-shield-alt"></i> Rol</th>
+                  <th><i class="fas fa-cog"></i> İşlemler</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </div>
 
       <!-- Duyurular -->
       <div class="panel">
         <div class="panel-header">
-          <h3>Duyurular</h3>
+          <div class="panel-title">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Duyuru Yönetimi</h3>
+          </div>
           <p class="muted">Yeni duyuru ekleyin, düzenleyin veya yayınlayın.</p>
         </div>
 
         <div class="panel-body two-col">
           <form id="announceForm" class="panel-form">
-            <h4>Yeni Duyuru</h4>
-            <label>Başlık
+            <div class="form-header">
+              <h4><i class="fas fa-plus-circle"></i> Yeni Duyuru</h4>
+            </div>
+            <div class="form-group">
+              <label for="annTitle">
+                <i class="fas fa-heading"></i>
+                Başlık
+              </label>
               <input type="text" id="annTitle" placeholder="Duyuru başlığı" required />
-            </label>
-            <label>İçerik
+            </div>
+            <div class="form-group">
+              <label for="annContent">
+                <i class="fas fa-align-left"></i>
+                İçerik
+              </label>
               <textarea id="annContent" rows="5" placeholder="Duyuru metni..." required></textarea>
-            </label>
-            <div class="form-row">
-              <button type="submit" class="btn">Yayınla</button>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+                Yayınla
+              </button>
             </div>
           </form>
 
-          <div class="ann-list">
-            <h4>Mevcut Duyurular</h4>
-            <ul id="announcements"></ul>
+          <div class="announcements-section">
+            <div class="ann-header">
+              <h4><i class="fas fa-list"></i> Mevcut Duyurular</h4>
+            </div>
+            <div class="ann-list">
+              <ul id="announcements"></ul>
+            </div>
           </div>
         </div>
       </div>
@@ -213,8 +351,14 @@
           <td>${escapeHtml(b.year||'—')}</td>
           <td>${escapeHtml(b.category||'—')}</td>
           <td class="ops">
-            <button data-i="${i}" class="btn ghost small edit-book">Düzenle</button>
-            <button data-i="${i}" class="btn danger small del-book">Sil</button>
+            <button data-i="${i}" class="btn btn-outline btn-sm edit-book">
+              <i class="fas fa-edit"></i>
+              Düzenle
+            </button>
+            <button data-i="${i}" class="btn btn-danger btn-sm del-book">
+              <i class="fas fa-trash"></i>
+              Sil
+            </button>
           </td>
         `;
         booksTbody.appendChild(tr);
@@ -234,7 +378,10 @@
           <td>${escapeHtml(u.email)}</td>
           <td>${escapeHtml(u.role||'Öğrenci')}</td>
           <td class="ops">
-            <button data-i="${i}" class="btn ghost small del-user">Sil</button>
+            <button data-i="${i}" class="btn btn-danger btn-sm del-user">
+              <i class="fas fa-trash"></i>
+              Sil
+            </button>
           </td>
         `;
         usersTbody.appendChild(tr);
@@ -249,7 +396,10 @@
         li.innerHTML = `<strong>${escapeHtml(a.title)}</strong>
           <p>${escapeHtml(a.content)}</p>
           <div class="ann-ops">
-            <button data-i="${i}" class="btn ghost small del-ann">Sil</button>
+            <button data-i="${i}" class="btn btn-danger btn-sm del-ann">
+              <i class="fas fa-trash"></i>
+              Sil
+            </button>
           </div>`;
         annList.appendChild(li);
       });

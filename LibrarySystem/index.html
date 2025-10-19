@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Selim Library | Ana Sayfa</title>
   <link rel="stylesheet" href="genel.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="favicon.ico">
 </head>
 
@@ -17,11 +18,30 @@
     <h1 class="site-title">Selim Library</h1>
     <nav>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Ana Sayfa</a></li>
-        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="misyon-vizyon.html">Misyon & Vizyon</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-        <li><a href="login.html">Giriş</a></li>
+        <li><a href="index.html" class="active">
+          <i class="fas fa-home"></i>
+          Ana Sayfa
+        </a></li>
+        <li><a href="hakkimizda.html">
+          <i class="fas fa-info-circle"></i>
+          Hakkımızda
+        </a></li>
+        <li><a href="misyon-vizyon.html">
+          <i class="fas fa-bullseye"></i>
+          Misyon & Vizyon
+        </a></li>
+        <li><a href="iletisim.html">
+          <i class="fas fa-envelope"></i>
+          İletişim
+        </a></li>
+        <li><a href="kitaplar.php">
+          <i class="fas fa-book"></i>
+          Kitaplar
+        </a></li>
+        <li><a href="login.html">
+          <i class="fas fa-sign-in-alt"></i>
+          Giriş
+        </a></li>
       </ul>
     </nav>
   </header>
@@ -29,34 +49,149 @@
   <!-- Hero Section with More Visual Emphasis -->
   <main class="hero-section modern-hero">
     <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-star"></i>
+        <span>İstanbul Medeniyet Üniversitesi</span>
+      </div>
       <h2>Bir Kitapla Değişen Hayatlar</h2>
       <p>Selim Library ile bilgiye kolayca ulaş, dijital ve fiziksel kaynaklar arasında hızlıca yolculuk yap. Her yeni sayfa yeni bir keşif!</p>
-      <a href="login.html" class="btn btn-large">Giriş Yap</a>
+      <div class="hero-actions">
+        <a href="login.html" class="btn btn-primary btn-large">
+          <i class="fas fa-sign-in-alt"></i>
+          Giriş Yap
+        </a>
+        <a href="hakkimizda.html" class="btn btn-outline btn-large">
+          <i class="fas fa-info-circle"></i>
+          Daha Fazla Bilgi
+        </a>
+      </div>
     </div>
-    <div class="hero-bg-books"></div>
   </main>
 
   <!-- Features Revised -->
   <section class="features modern-features">
-    <div class="feature-card modern-feature-card">
-      <div class="feature-icon">📚</div>
-      <h3>Geniş Kaynak Arşivi</h3>
-      <p>Binlerce kitap, makale ve e-kitap ile zengin bilgi kaynağına erişin.</p>
+    <div class="features-header">
+      <div class="header-content">
+        <div class="header-text">
+          <div class="header-badge">
+            <i class="fas fa-star"></i>
+            <span>Özellikler</span>
+          </div>
+          <h2>Neden Selim Library?</h2>
+          <p>Modern kütüphane deneyiminin tüm avantajlarını keşfedin. Dijital ve fiziksel kaynaklar arasında sorunsuz geçiş yapın.</p>
+        </div>
+        <div class="header-visual">
+          <div class="logo-container">
+            <img src="logo.png" alt="Selim Library Logo" class="feature-logo">
+            <div class="logo-glow"></div>
+          </div>
+          <div class="floating-elements">
+            <div class="floating-icon icon-1"><i class="fas fa-book-open"></i></div>
+            <div class="floating-icon icon-2"><i class="fas fa-search"></i></div>
+            <div class="floating-icon icon-3"><i class="fas fa-users"></i></div>
+            <div class="floating-icon icon-4"><i class="fas fa-laptop"></i></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="feature-card modern-feature-card">
-      <div class="feature-icon">🌐</div>
-      <h3>Online Erişim</h3>
-      <p>Dilediğiniz her yerden kütüphanemize bağlanın ve kaynakları görüntüleyin.</p>
-    </div>
-    <div class="feature-card modern-feature-card">
-      <div class="feature-icon">🎨</div>
-      <h3>Modern Arayüz</h3>
-      <p>Kullanıcı dostu ve şık bir tasarım ile kolayca gezinin.</p>
+    <div class="features-grid">
+      <div class="feature-card modern-feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <h3>Geniş Kaynak Arşivi</h3>
+        <p>Binlerce kitap, makale ve e-kitap ile zengin bilgi kaynağına erişin. Her konuda aradığınızı bulun.</p>
+        <div class="feature-number">10,000+</div>
+      </div>
+      <div class="feature-card modern-feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3>Online Erişim</h3>
+        <p>Dilediğiniz her yerden kütüphanemize bağlanın ve kaynakları görüntüleyin. 7/24 erişim imkanı.</p>
+        <div class="feature-number">24/7</div>
+      </div>
+      <div class="feature-card modern-feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3>Modern Arayüz</h3>
+        <p>Kullanıcı dostu ve şık bir tasarım ile kolayca gezinin. En iyi deneyim için tasarlandı.</p>
+        <div class="feature-number">100%</div>
+      </div>
+      <div class="feature-card modern-feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>Gelişmiş Arama</h3>
+        <p>Akıllı arama algoritması ile istediğiniz bilgiyi saniyeler içinde bulun. Filtreleme ve sıralama seçenekleri.</p>
+        <div class="feature-number">AI</div>
+      </div>
+      <div class="feature-card modern-feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3>Mobil Uyumlu</h3>
+        <p>Tüm cihazlarda mükemmel çalışır. Telefon, tablet veya bilgisayar - fark etmez!</p>
+        <div class="feature-number">100%</div>
+      </div>
+      <div class="feature-card modern-feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Güvenli Platform</h3>
+        <p>Verileriniz güvende. En yüksek güvenlik standartları ile korunuyorsunuz.</p>
+        <div class="feature-number">SSL</div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Selim Library | İstanbul Medeniyet Üniversitesi</p>
+
+  <footer class="modern-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <h3><i class="fas fa-book"></i> Selim Library</h3>
+          <p>İstanbul Medeniyet Üniversitesi'nin dijital kütüphane platformu. Bilgiye erişimi kolaylaştırıyoruz.</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Sayfalar</h4>
+            <ul>
+              <li><a href="index.html">Ana Sayfa</a></li>
+              <li><a href="hakkimizda.html">Hakkımızda</a></li>
+              <li><a href="misyon-vizyon.html">Misyon & Vizyon</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Destek</h4>
+            <ul>
+              <li><a href="#">Yardım Merkezi</a></li>
+              <li><a href="#">SSS</a></li>
+              <li><a href="#">Teknik Destek</a></li>
+              <li><a href="#">Geri Bildirim</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>İletişim</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+              <p><i class="fas fa-phone"></i> +90 (212) 123 45 67</p>
+              <p><i class="fas fa-envelope"></i> info@selimlibrary.edu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Selim Library | İstanbul Medeniyet Üniversitesi. Tüm hakları saklıdır.</p>
+    </div>
   </footer>
 </body>
 </html>
